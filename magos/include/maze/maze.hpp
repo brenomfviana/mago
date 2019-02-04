@@ -11,14 +11,31 @@
 #define _MAGOS_MAZE_HPP_
 
 #include <iostream>
+#include "cell.hpp"
 
+/*!
+ * \brief Maze class
+ */
 class Maze {
   private:
     size_t width; ///< Maze width
     size_t height; ///< Maze height
 
   public:
+    Cell* cells; ///< Maze cells
+
+    /*!
+     * \brief Maze constructor
+     */
     Maze(size_t width, size_t height);
+
+    size_t get_width() {
+      return this->width;
+    }
+
+    size_t get_height() {
+      return this->height;
+    }
 };
 
 #endif /* _MAGOS_MAZE_HPP_ */

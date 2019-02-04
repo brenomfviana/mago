@@ -12,4 +12,11 @@
 Maze::Maze(size_t width, size_t height) {
   this->width = width;
   this->height = height;
+  for (size_t row = 0; row < height; row++) {
+   	for (size_t col = 0; col < width; col++) {
+            this->cells[(row * width) + (col)] = Cell();
+            this->cells[(row * width) + (col) + 1] = Cell();
+            this->cells[(row * width) + (col) + 2] = Cell();
+        }
+    }
 }
