@@ -28,6 +28,8 @@ class BTGenerator : public Generator {
     BTGenerator(size_t width, size_t height)
       : Generator(width, height) { /* empty */ }
 
+    Maze* generate(size_t v, size_t h, Directions dv, Directions dh);
+
     Maze* generate();
 };
 

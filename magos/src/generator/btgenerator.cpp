@@ -11,41 +11,59 @@
 #include <ctime>
 #include "generator/btgenerator.hpp"
 
-Maze* BTGenerator::generate() {
+Maze* BTGenerator::generate(size_t v, size_t h, Directions dv, Directions dh) {
   Maze* maze = new Maze(this->width, this->height);
-  // Init random seed
-  srand(time(NULL));
-  for (int i = (maze->get_height() - 1); i >= 0; i--) {
-    for (int j = (maze->get_width() - 1); j >= 0; j--) {
-      // Check if is first line
-      if (i == 0 && j == 0){
+  // Build the maze
+  for (int i = 0; i < maze->get_height(); i++) {
+    for (int j = 0; j < maze->get_width(); j++) {
+      // Check vertical and horizontal bounds
+      if (i == v && j == h) {
         continue;
-      } else if (i == 0) {
-        maze->get_cell(i, j)->knock_down_left_wall();
-        if (j > 0) {
-          maze->get_cell(i, j - 1)->knock_down_right_wall();
-        }
-      } else if (j == 0) {
-        maze->get_cell(i, j)->knock_down_top_wall();
-        if (i > 0) {
-          maze->get_cell(i - 1, j)->knock_down_bottom_wall();
-        }
-      } else {
-        bool r = ((rand() % 2) == true);
-        if ((r && maze->get_cell(i, j)->is_top_wall_standing()) ||
-          (!r && !maze->get_cell(i, j)->is_left_wall_standing())) {
-            maze->get_cell(i, j)->knock_down_top_wall();
-            if (i > 0) {
-              maze->get_cell(i - 1, j)->knock_down_bottom_wall();
+      } else
+        // Check vertical bound
+        if (i == v) {
+          maze->knock_down_a_wall(i, j, dh);
+        } else
+          // Check horizontal bound
+          if (j == h) {
+            maze->knock_down_a_wall(i, j, dv);
+          } else {
+            bool r = ((rand() % 2) == true);
+            if (r && maze->get_cell(i, j)->is_north_wall_standing()) {
+              maze->knock_down_a_wall(i, j, dv);
+            } else {
+              maze->knock_down_a_wall(i, j, dh);
             }
-        } else {
-          maze->get_cell(i, j)->knock_down_left_wall();
-          if (j > 0) {
-            maze->get_cell(i, j - 1)->knock_down_right_wall();
           }
-        }
-      }
     }
   }
   return maze;
+}
+
+Maze* BTGenerator::generate() {
+  // Init random seed
+  srand(time(NULL));
+  // Choose diagonal
+  size_t d = (rand() % 4);
+  switch (d) {
+    case 0:
+      // Northwest
+      return generate(0, 0, NORTH, WEST);
+      break;
+    case 1:
+      // Northeast
+      return generate(0, (this->width - 1), NORTH, EAST);
+      break;
+    case 2:
+      // Southwest
+      return generate((this->width - 1), 0, SOUTH, WEST);
+      break;
+    case 3:
+      // Southeast
+      return generate((this->width - 1), (this->width - 1), SOUTH, EAST);
+      break;
+    default:
+      return new Maze(width, height);
+      break;
+  }
 }
