@@ -10,40 +10,40 @@
 #include "maze/cell.hpp"
 
 Cell::Cell() {
-  this->top = true;
-  this->right = true;
-  this->bottom = true;
-  this->left = true;
+  this->north = true;
+  this->east = true;
+  this->south = true;
+  this->west = true;
 }
 
-bool Cell::is_top_wall_standing() {
-  return this->top;
+bool Cell::is_north_wall_standing() {
+  return this->north;
 }
 
-bool Cell::is_right_wall_standing() {
-  return this->right;
+bool Cell::is_east_wall_standing() {
+  return this->east;
 }
 
-bool Cell::is_bottom_wall_standing() {
-  return this->bottom;
+bool Cell::is_south_wall_standing() {
+  return this->south;
 }
 
-bool Cell::is_left_wall_standing() {
-  return this->left;
+bool Cell::is_west_wall_standing() {
+  return this->west;
 }
 
-void Cell::knock_down_top_wall() {
-  this->top = false;
+void Cell::knock_down_north_wall() {
+  this->north = false;
 }
 
-void Cell::knock_down_right_wall() {
-  this->right = false;
+void Cell::knock_down_east_wall() {
+  this->east = false;
 }
 
-void Cell::knock_down_bottom_wall() {
-  this->bottom = false;
+void Cell::knock_down_south_wall() {
+  this->south = false;
 }
 
-void Cell::knock_down_left_wall() {
-  this->left = false;
+void Cell::knock_down_west_wall() {
+  this->west = false;
 }

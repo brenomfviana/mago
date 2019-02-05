@@ -29,7 +29,7 @@ void Printer::print(Maze* maze) {
       } else {
         std::cout << " ";
       }
-      if (maze->get_cell(i, j)->is_right_wall_standing()) {
+      if (maze->get_cell(i, j)->is_east_wall_standing()) {
         std::cout << "#";
       } else {
         std::cout << " ";
@@ -41,7 +41,7 @@ void Printer::print(Maze* maze) {
       if (j == 0) {
         std::cout << "#";
       }
-      if (maze->get_cell(i, j)->is_bottom_wall_standing()) {
+      if (maze->get_cell(i, j)->is_south_wall_standing()) {
         std::cout << "##";
       } else  {
         std::cout << " #";

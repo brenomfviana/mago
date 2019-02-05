@@ -38,6 +38,8 @@ class Maze {
     size_t get_height();
 
     Cell* get_cell(size_t i, size_t j);
+
+    void knock_down_a_wall(size_t i, size_t j, Directions dir);
 };
 
 #endif /* _MAGOS_MAZE_HPP_ */

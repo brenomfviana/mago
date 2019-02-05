@@ -29,7 +29,6 @@ Maze::~Maze() {
   delete [] this->cells;
 }
 
-
 size_t Maze::get_width() {
   return this->width;
 }
@@ -40,4 +39,33 @@ size_t Maze::get_height() {
 
 Cell* Maze::get_cell(size_t i, size_t j) {
   return this->cells[(i * this->width) + j];
+}
+
+void Maze::knock_down_a_wall(size_t i, size_t j, Directions dir) {
+  switch (dir) {
+    case NORTH:
+      get_cell(i, j)->knock_down_north_wall();
+      if (i > 0) {
+        get_cell(i - 1, j)->knock_down_south_wall();
+      }
+      break;
+    case EAST:
+      get_cell(i, j)->knock_down_east_wall();
+      if (j  < (this->width - 1)) {
+        get_cell(i, j + 1)->knock_down_west_wall();
+      }
+      break;
+    case SOUTH:
+      get_cell(i, j)->knock_down_south_wall();
+      if (i < (this->height - 1)) {
+        get_cell(i + 1, j)->knock_down_north_wall();
+      }
+      break;
+    case WEST:
+      get_cell(i, j)->knock_down_west_wall();
+      if (j > 0) {
+        get_cell(i, j - 1)->knock_down_east_wall();
+      }
+      break;
+  }
 }

@@ -12,15 +12,17 @@
 
 #include <iostream>
 
+enum Directions { NORTH, SOUTH, EAST, WEST };
+
 /*!
  * \brief Maze cell
  */
 class Cell {
   private:
-    bool top; ///< Top wall
-    bool right; ///< Right wall
-    bool bottom; ///< Bottom wall
-    bool left; ///< Left wall
+    bool north; ///< North wall
+    bool east; ///< East wall
+    bool south; ///< South wall
+    bool west; ///< West wall
 
   public:
     /*!
@@ -28,21 +30,21 @@ class Cell {
      */
     Cell();
 
-    bool is_top_wall_standing();
+    bool is_north_wall_standing();
 
-    bool is_right_wall_standing();
+    bool is_east_wall_standing();
 
-    bool is_bottom_wall_standing();
+    bool is_south_wall_standing();
 
-    bool is_left_wall_standing();
+    bool is_west_wall_standing();
 
-    void knock_down_top_wall();
+    void knock_down_north_wall();
 
-    void knock_down_right_wall();
+    void knock_down_east_wall();
 
-    void knock_down_bottom_wall();
+    void knock_down_south_wall();
 
-    void knock_down_left_wall();
+    void knock_down_west_wall();
 };
 
 #endif /* _MAGOS_CELL_HPP_ */
