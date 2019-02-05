@@ -12,9 +12,9 @@
 
 void Printer::print(Maze* maze) {
   std::cout << "\n";
-  for (size_t i = 0; i < maze->get_width(); i++) {
+  for (size_t i = 0; i < maze->get_height(); i++) {
     // Top
-    for (size_t j = 0; j < maze->get_height(); j++) {
+    for (size_t j = 0; j < maze->get_width(); j++) {
       if (maze->get_cell(i, j)->is_top_wall_standing()) {
         std::cout << "###";
       } else  {
@@ -23,7 +23,7 @@ void Printer::print(Maze* maze) {
     }
     std::cout << "\n";
     // Mid
-    for (size_t j = 0; j < maze->get_height(); j++) {
+    for (size_t j = 0; j < maze->get_width(); j++) {
       if (maze->get_cell(i, j)->is_left_wall_standing()) {
         std::cout << "# ";
       } else {
@@ -37,7 +37,7 @@ void Printer::print(Maze* maze) {
     }
     std::cout << "\n";
     // Bottom
-    for (size_t j = 0; j < maze->get_height(); j++) {
+    for (size_t j = 0; j < maze->get_width(); j++) {
       if (maze->get_cell(i, j)->is_bottom_wall_standing()) {
         std::cout << "###";
       } else  {
