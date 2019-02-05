@@ -11,23 +11,23 @@
 #include "printer.hpp"
 
 void Printer::print(Maze* maze) {
+  std::cout << "\n#";
+  for (size_t i = 0; i < maze->get_width(); i++) {
+    std::cout << "##";
+  }
   std::cout << "\n";
   for (size_t i = 0; i < maze->get_height(); i++) {
-    // Top
-    for (size_t j = 0; j < maze->get_width(); j++) {
-      if (maze->get_cell(i, j)->is_top_wall_standing()) {
-        std::cout << "###";
-      } else  {
-        std::cout << "# #";
-      }
-    }
-    std::cout << "\n";
     // Mid
     for (size_t j = 0; j < maze->get_width(); j++) {
-      if (maze->get_cell(i, j)->is_left_wall_standing()) {
-        std::cout << "# ";
+      if (j == 0) {
+        std::cout << "#";
+      }
+      if (maze->get_cell(i, j) == maze->sp) {
+        std::cout << "S";
+      } else if (maze->get_cell(i, j) == maze->ep) {
+        std::cout << "E";
       } else {
-        std::cout << "  ";
+        std::cout << " ";
       }
       if (maze->get_cell(i, j)->is_right_wall_standing()) {
         std::cout << "#";
@@ -38,10 +38,13 @@ void Printer::print(Maze* maze) {
     std::cout << "\n";
     // Bottom
     for (size_t j = 0; j < maze->get_width(); j++) {
+      if (j == 0) {
+        std::cout << "#";
+      }
       if (maze->get_cell(i, j)->is_bottom_wall_standing()) {
-        std::cout << "###";
+        std::cout << "##";
       } else  {
-        std::cout << "# #";
+        std::cout << " #";
       }
     }
     std::cout << "\n";

@@ -18,6 +18,8 @@ Maze::Maze(size_t width, size_t height) {
       this->cells[(i * this->width) + j] = new Cell();
     }
   }
+  this->sp = this->cells[0];
+  this->ep = this->cells[(this->height * this->width - 1)];
 }
 
 Maze::~Maze() {

@@ -23,6 +23,8 @@ class Maze {
 
   public:
     Cell** cells; ///< Maze cells
+    Cell* sp; ///< Starting point
+    Cell* ep; ///< End point
 
     /*!
      * \brief Maze constructor
