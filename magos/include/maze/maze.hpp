@@ -22,20 +22,20 @@ class Maze {
     size_t height; ///< Maze height
 
   public:
-    Cell* cells; ///< Maze cells
+    Cell** cells; ///< Maze cells
 
     /*!
      * \brief Maze constructor
      */
     Maze(size_t width, size_t height);
 
-    size_t get_width() {
-      return this->width;
-    }
+    ~Maze();
 
-    size_t get_height() {
-      return this->height;
-    }
+    size_t get_width();
+
+    size_t get_height();
+
+    Cell* get_cell(size_t i, size_t j);
 };
 
 #endif /* _MAGOS_MAZE_HPP_ */

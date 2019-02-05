@@ -14,5 +14,10 @@ add_library(maze STATIC src/maze/maze.cpp include/maze/maze.hpp src/maze/cell.cp
 target_include_directories(maze PUBLIC include)
 target_compile_features(maze PUBLIC cxx_std_11)
 
+add_library(printer STATIC src/printer.cpp include/printer.hpp)
+target_include_directories(printer PUBLIC include)
+target_compile_features(printer PUBLIC cxx_std_11)
+
 add_executable(${PROJECT_NAME} src/magos.cpp)
 target_link_libraries(${PROJECT_NAME} PUBLIC maze)
+target_link_libraries(${PROJECT_NAME} PUBLIC printer)

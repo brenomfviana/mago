@@ -12,11 +12,30 @@
 Maze::Maze(size_t width, size_t height) {
   this->width = width;
   this->height = height;
-  for (size_t row = 0; row < height; row++) {
-   	for (size_t col = 0; col < width; col++) {
-            this->cells[(row * width) + (col)] = Cell();
-            this->cells[(row * width) + (col) + 1] = Cell();
-            this->cells[(row * width) + (col) + 2] = Cell();
-        }
+  this->cells = new Cell*[this->height * this->width];
+  for (size_t i = 0; i < this->height; i++) {
+   	for (size_t j = 0; j < this->width; j++) {
+      this->cells[(i * this->width) + j] = new Cell();
     }
+  }
+}
+
+Maze::~Maze() {
+  for (size_t i = 0; i < this->height * this->width; i++) {
+      delete [] this->cells[i];
+  }
+  delete [] this->cells;
+}
+
+
+size_t Maze::get_width() {
+  return this->width;
+}
+
+size_t Maze::get_height() {
+  return this->height;
+}
+
+Cell* Maze::get_cell(size_t i, size_t j) {
+  return this->cells[(i * this->width) + j];
 }

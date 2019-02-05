@@ -11,6 +11,7 @@
 #include <iostream>
 #include <sstream>
 #include "maze/maze.hpp"
+#include "printer.hpp"
 
 /*!
  * \brief Validade arguments and get maze dimensions
@@ -45,7 +46,27 @@ int main(int argc, char* argv[]) {
     exit(1);
   }
   // Welcome message
-  Maze maze(width, height);
+  std::cout << "Create maze" << '\n';
+  Maze* maze = new Maze(width, height);
+  std::cout << "Knock down wall maze" << '\n';
+  maze->get_cell(0, 0)->knock_down_bottom_wall();
+  maze->get_cell(1, 0)->knock_down_top_wall();
+  maze->get_cell(1, 0)->knock_down_bottom_wall();
+  maze->get_cell(2, 0)->knock_down_top_wall();
+  maze->get_cell(2, 0)->knock_down_right_wall();
+  maze->get_cell(2, 1)->knock_down_left_wall();
+  maze->get_cell(2, 1)->knock_down_top_wall();
+  maze->get_cell(1, 1)->knock_down_bottom_wall();
+  maze->get_cell(1, 1)->knock_down_top_wall();
+  maze->get_cell(0, 1)->knock_down_bottom_wall();
+  maze->get_cell(0, 1)->knock_down_right_wall();
+  maze->get_cell(0, 2)->knock_down_left_wall();
+  maze->get_cell(0, 2)->knock_down_bottom_wall();
+  maze->get_cell(1, 2)->knock_down_top_wall();
+  maze->get_cell(1, 2)->knock_down_bottom_wall();
+  maze->get_cell(2, 2)->knock_down_top_wall();
+  std::cout << "Print maze" << '\n';
+  Printer::print(maze);
   // End
   return EXIT_SUCCESS;
 }
