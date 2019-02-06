@@ -66,6 +66,21 @@ class Maze {
     Cell* get_cell(size_t i, size_t j);
 
     /*!
+     * \brief Check if the north wall is standing
+     *
+     * \param i
+     *     Vertical index
+     * \param j
+     *     Horizontal index
+     * \param dir
+     *     Cardinal direction of the wall
+     *
+     * \return
+     *     Return true if the north wall is standing and false otherwise
+     */
+    bool is_wall_standing(size_t i, size_t j, Directions dir);
+
+    /*!
      * \brief Knock down a wall of a maze cell
      *
      * \param i

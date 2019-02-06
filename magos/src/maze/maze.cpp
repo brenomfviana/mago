@@ -41,6 +41,19 @@ Cell* Maze::get_cell(size_t i, size_t j) {
   return this->cells[(i * this->width) + j];
 }
 
+bool Maze::is_wall_standing(size_t i, size_t j, Directions dir) {
+  switch (dir) {
+    case NORTH:
+      return get_cell(i, j)->is_north_wall_standing();
+    case WEST:
+      return get_cell(i, j)->is_west_wall_standing();
+    case SOUTH:
+      return get_cell(i, j)->is_south_wall_standing();
+    case EAST:
+      return get_cell(i, j)->is_east_wall_standing();
+  }
+}
+
 void Maze::knock_down_a_wall(size_t i, size_t j, Directions dir) {
   switch (dir) {
     case NORTH:
@@ -49,10 +62,10 @@ void Maze::knock_down_a_wall(size_t i, size_t j, Directions dir) {
         get_cell(i - 1, j)->knock_down_south_wall();
       }
       break;
-    case EAST:
-      get_cell(i, j)->knock_down_east_wall();
-      if (j  < (this->width - 1)) {
-        get_cell(i, j + 1)->knock_down_west_wall();
+    case WEST:
+      get_cell(i, j)->knock_down_west_wall();
+      if (j > 0) {
+        get_cell(i, j - 1)->knock_down_east_wall();
       }
       break;
     case SOUTH:
@@ -61,10 +74,10 @@ void Maze::knock_down_a_wall(size_t i, size_t j, Directions dir) {
         get_cell(i + 1, j)->knock_down_north_wall();
       }
       break;
-    case WEST:
-      get_cell(i, j)->knock_down_west_wall();
-      if (j > 0) {
-        get_cell(i, j - 1)->knock_down_east_wall();
+    case EAST:
+      get_cell(i, j)->knock_down_east_wall();
+      if (j  < (this->width - 1)) {
+        get_cell(i, j + 1)->knock_down_west_wall();
       }
       break;
   }

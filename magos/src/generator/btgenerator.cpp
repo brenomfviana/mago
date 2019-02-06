@@ -29,7 +29,7 @@ Maze* BTGenerator::generate(size_t v, size_t h, Directions dv, Directions dh) {
             maze->knock_down_a_wall(i, j, dv);
           } else {
             bool r = ((rand() % 2) == true);
-            if (r && maze->get_cell(i, j)->is_north_wall_standing()) {
+            if (r && maze->is_wall_standing(i, j, dv)) {
               maze->knock_down_a_wall(i, j, dv);
             } else {
               maze->knock_down_a_wall(i, j, dh);
