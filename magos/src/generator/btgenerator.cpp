@@ -56,11 +56,11 @@ Maze* BTGenerator::generate() {
       break;
     case 2:
       // Southwest
-      return generate((this->width - 1), 0, SOUTH, WEST);
+      return generate((this->height - 1), 0, SOUTH, WEST);
       break;
     case 3:
       // Southeast
-      return generate((this->width - 1), (this->width - 1), SOUTH, EAST);
+      return generate((this->height - 1), (this->width - 1), SOUTH, EAST);
       break;
     default:
       return new Maze(width, height);
