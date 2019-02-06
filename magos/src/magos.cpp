@@ -46,11 +46,10 @@ int main(int argc, char* argv[]) {
   if (!check_args(argc, argv, width, height)) {
     exit(1);
   }
-  // Welcome message
-  std::cout << "Create maze" << '\n';
+  // Create maze
   Generator* bt = new BTGenerator(width, height);
   Maze* maze = bt->generate();
-  std::cout << "Print maze" << '\n';
+  std::cout << "Generated maze" << '\n';
   Printer::print(maze);
   // End
   return EXIT_SUCCESS;

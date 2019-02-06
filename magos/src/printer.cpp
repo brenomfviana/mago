@@ -12,6 +12,7 @@
 
 void Printer::print(Maze* maze) {
   std::cout << "\n#";
+  // Top wall
   for (size_t i = 0; i < maze->get_width(); i++) {
     std::cout << "##";
   }
@@ -19,6 +20,7 @@ void Printer::print(Maze* maze) {
   for (size_t i = 0; i < maze->get_height(); i++) {
     // Mid
     for (size_t j = 0; j < maze->get_width(); j++) {
+      // Left wall
       if (j == 0) {
         std::cout << "#";
       }

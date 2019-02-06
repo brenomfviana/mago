@@ -17,6 +17,12 @@
  */
 class Printer {
   public:
+    /*!
+     * \brief Print a maze
+     *
+     * \param maze
+     *     The maze to be printed
+     */
     static void print(Maze* maze);
 };
 

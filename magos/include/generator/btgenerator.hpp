@@ -28,6 +28,21 @@ class BTGenerator : public Generator {
     BTGenerator(size_t width, size_t height)
       : Generator(width, height) { /* empty */ }
 
+    /*!
+     * \brief
+     *
+     * \param v
+     *     Vertical bound
+     * \param h
+     *     Horizontal bound
+     * \param dv
+     *     A vertical cardinal direction
+     * \param dh
+     *     A horizontal cardinal direction
+     *
+     * \return
+     *     The generated maze
+     */
     Maze* generate(size_t v, size_t h, Directions dv, Directions dh);
 
     Maze* generate();

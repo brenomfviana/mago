@@ -31,14 +31,50 @@ class Maze {
      */
     Maze(size_t width, size_t height);
 
+    /*!
+     * \brief Maze destructor
+     */
     ~Maze();
 
+    /*!
+     * \brief Return maze width
+     *
+     * \return
+     *     Maze width
+     */
     size_t get_width();
 
+    /*!
+     * \brief Return maze height
+     *
+     * \return
+     *     Maze height
+     */
     size_t get_height();
 
+    /*!
+     * \brief Return a maze cell
+     *
+     * \param i
+     *     Vertical index
+     * \param j
+     *     Horizontal index
+     *
+     * \return
+     *     A maze cell
+     */
     Cell* get_cell(size_t i, size_t j);
 
+    /*!
+     * \brief Knock down a wall of a maze cell
+     *
+     * \param i
+     *     Vertical index
+     * \param j
+     *     Horizontal index
+     * \param dir
+     *     Cardinal direction of the wall
+     */
     void knock_down_a_wall(size_t i, size_t j, Directions dir);
 };
 

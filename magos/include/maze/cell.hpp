@@ -30,21 +30,57 @@ class Cell {
      */
     Cell();
 
+    /*!
+     * \brief Check if the north wall is standing
+     *
+     * \return
+     *     Return true if the north wall is standing and false otherwise
+     */
     bool is_north_wall_standing();
 
-    bool is_east_wall_standing();
-
-    bool is_south_wall_standing();
-
+    /*!
+     * \brief Check if the west wall is standing
+     *
+     * \return
+     *     Return true if the west wall is standing and false otherwise
+     */
     bool is_west_wall_standing();
 
+    /*!
+     * \brief Check if the south wall is standing
+     *
+     * \return
+     *     Return true if the south wall is standing and false otherwise
+     */
+    bool is_south_wall_standing();
+
+    /*!
+     * \brief Check if the east wall is standing
+     *
+     * \return
+     *     Return true if the east wall is standing and false otherwise
+     */
+    bool is_east_wall_standing();
+
+    /*!
+     * \brief Knock down the north wall
+     */
     void knock_down_north_wall();
 
-    void knock_down_east_wall();
+    /*!
+     * \brief Knock down the west wall
+     */
+    void knock_down_west_wall();
 
+    /*!
+     * \brief Knock down the south wall
+     */
     void knock_down_south_wall();
 
-    void knock_down_west_wall();
+    /*!
+     * \brief Knock down the east wall
+     */
+    void knock_down_east_wall();
 };
 
 #endif /* _MAGOS_CELL_HPP_ */

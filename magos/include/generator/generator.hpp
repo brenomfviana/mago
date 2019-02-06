@@ -38,7 +38,7 @@ class Generator {
      * \brief Perform maze generation and returns the generated maze
      *
      * \return
-     *     A generated maze
+     *     The generated maze
      */
     virtual Maze* generate() = 0;
 };
