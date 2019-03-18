@@ -4,7 +4,7 @@
 
 MAGOS is a maze generator and solver.
 
-### TODO
+### Features
 
 - [ ] Generators
   - [x] Binary Tree Algorithm;
@@ -22,14 +22,14 @@ MAGOS is a maze generator and solver.
   - [ ] Depth-First Search;
   - [ ] Wall follower.
 
-## Compile and Run
+## Build and Run
 
 Requirements:
 
-- C++11
-- CMake 3.1
+- C++17;
+- CMake 3.13.
 
-To compile the project, go to the root and, through terminal, run the following commands:
+To build the project, go to the root and, through terminal, run the following commands:
 
 ```
 mkdir build
@@ -40,7 +40,7 @@ cmake ..
 Then, type the following command to run MAGOS:
 
 ```
-./MAGOS <width> <height>
+./magos <width> <height>
 ```
 
 ### Sample
@@ -56,3 +56,7 @@ Then, type the following command to run MAGOS:
 [<img src="https://avatars2.githubusercontent.com/u/17532418?v=3&s=400" width="100"/>](https://github.com/brenov) |
 ---|
 [Breno Viana](https://github.com/brenov) |
+
+## License
+
+This project is licensed under MIT license - see the [MIT](LICENSE) file for details.
