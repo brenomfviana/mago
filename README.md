@@ -2,7 +2,7 @@
 
 ## Description
 
-MAGO is a maze generator (MAze GeneratOr).
+MAGO is a maze generator (MAze GeneratOr) that uses the Binary Tree approach.
 
 ## Build and Run
 
