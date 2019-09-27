@@ -1,14 +1,14 @@
 /*
-  This file is part of MAGOS.
+  This file is part of MAGO.
 
   Copyright (c) 2019 by Breno Viana
 
-  MAGOS is a free software; you can redistribute it and/or modify it under the
+  MAGO is a free software; you can redistribute it and/or modify it under the
   terms of the MIT License.
 */
 
-#ifndef _MAGOS_CELL_HPP_
-#define _MAGOS_CELL_HPP_
+#ifndef _MAGO_CELL_HPP_
+#define _MAGO_CELL_HPP_
 
 #include <iostream>
 
@@ -83,4 +83,4 @@ class Cell {
     void knock_down_east_wall();
 };
 
-#endif /* _MAGOS_CELL_HPP_ */
+#endif /* _MAGO_CELL_HPP_ */

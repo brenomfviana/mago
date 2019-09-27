@@ -1,14 +1,14 @@
 /*
-  This file is part of MAGOS.
+  This file is part of MAGO.
 
   Copyright (c) 2019 by Breno Viana
 
-  MAGOS is a free software; you can redistribute it and/or modify it under the
+  MAGO is a free software; you can redistribute it and/or modify it under the
   terms of the MIT License.
 */
 
-#ifndef _MAGOS_PRINTER_HPP_
-#define _MAGOS_PRINTER_HPP_
+#ifndef _MAGO_PRINTER_HPP_
+#define _MAGO_PRINTER_HPP_
 
 #include "maze/maze.hpp"
 
@@ -26,4 +26,4 @@ class Printer {
     static void print(Maze* maze);
 };
 
-#endif /* _MAGOS_PRINTER_HPP_ */
+#endif /* _MAGO_PRINTER_HPP_ */

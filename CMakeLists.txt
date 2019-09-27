@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(magos VERSION 1.0
-        DESCRIPTION "MAGOS is a maze generator and solver"
+project(MAGO VERSION 1.0
+        DESCRIPTION "MAGO is a maze generator and solver"
         LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -30,7 +30,7 @@ target_include_directories(btgenerator PUBLIC include)
 ################################################################################
 # Executables
 
-add_executable(${PROJECT_NAME} src/magos.cpp)
+add_executable(${PROJECT_NAME} src/mago.cpp)
 target_link_libraries(${PROJECT_NAME} PRIVATE maze)
 target_link_libraries(${PROJECT_NAME} PRIVATE btgenerator)
 target_link_libraries(${PROJECT_NAME} PRIVATE printer)

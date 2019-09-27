@@ -1,9 +1,9 @@
 /*
-  This file is part of MAGOS.
+  This file is part of MAGO.
 
   Copyright (c) 2019 by Breno Viana
 
-  MAGOS is a free software; you can redistribute it and/or modify it under the
+  MAGO is a free software; you can redistribute it and/or modify it under the
   terms of the MIT License.
 */
 

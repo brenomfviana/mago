@@ -1,14 +1,14 @@
 /*
-  This file is part of MAGOS.
+  This file is part of MAGO.
 
   Copyright (c) 2019 by Breno Viana
 
-  MAGOS is a free software; you can redistribute it and/or modify it under the
+  MAGO is a free software; you can redistribute it and/or modify it under the
   terms of the MIT License.
 */
 
-#ifndef _MAGOS_MAZE_HPP_
-#define _MAGOS_MAZE_HPP_
+#ifndef _MAGO_MAZE_HPP_
+#define _MAGO_MAZE_HPP_
 
 #include <iostream>
 #include "cell.hpp"
@@ -93,4 +93,4 @@ class Maze {
     void knock_down_a_wall(size_t i, size_t j, Directions dir);
 };
 
-#endif /* _MAGOS_MAZE_HPP_ */
+#endif /* _MAGO_MAZE_HPP_ */

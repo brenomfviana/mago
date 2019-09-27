@@ -1,14 +1,14 @@
 /*
-  This file is part of MAGOS.
+  This file is part of MAGO.
 
   Copyright (c) 2019 by Breno Viana
 
-  MAGOS is a free software; you can redistribute it and/or modify it under the
+  MAGO is a free software; you can redistribute it and/or modify it under the
   terms of the MIT License.
 */
 
-#ifndef _MAGOS_BTGENERATOR_HPP_
-#define _MAGOS_BTGENERATOR_HPP_
+#ifndef _MAGO_BTGENERATOR_HPP_
+#define _MAGO_BTGENERATOR_HPP_
 
 #include "generator/generator.hpp"
 
@@ -48,4 +48,4 @@ class BTGenerator : public Generator {
     Maze* generate();
 };
 
-#endif /* _MAGOS_BTGENERATOR_HPP_ */
+#endif /* _MAGO_BTGENERATOR_HPP_ */

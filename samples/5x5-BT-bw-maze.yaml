@@ -1,0 +1,9 @@
+name: 5x5-BT-bw-maze # File name
+approach: BT # Algorithm
+width: 5 # Maze width
+height: 5 # Maze height
+# Maze Theme
+bg-color: [ 255, 255, 255 ] # Maze background color
+fg-color: [ 0, 0, 0 ] # Maze walls color
+w-path: [ 255, 255, 0 ] # Wrong path color
+r-path: [ 255, 0, 0 ] # Right path color
