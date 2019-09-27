@@ -23,7 +23,7 @@ cmake ..
 Then, type the following command to run MAGO:
 
 ```
-./MAGO <width> <height>
+./mago <width> <height>
 ```
 
 ### Sample
