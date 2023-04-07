@@ -26,7 +26,7 @@ Then, type the following command to run MAGO:
 ./mago <width> <height>
 ```
 
-### Sample
+### Example
 
 <div style="margin: 0 auto; max-width: 250px;">
 	<p align="center">
